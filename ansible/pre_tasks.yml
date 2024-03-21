@@ -1,0 +1,16 @@
+---
+
+- name: Update packages
+  apt:
+    name: "*"
+    state: latest
+    update_cache: yes
+    autoremove: yes
+    autoclean: yes
+  register: apt_state
+
+- name: Reboot machine # Required to upgrade the kernel and delete the old one
+  reboot:
+    post_reboot_delay: 60
+    test_command: "true" # Keep quotas as without them it gets interpreted as boolean
+  when: apt_state.changed

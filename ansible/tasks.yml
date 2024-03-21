@@ -1,0 +1,6 @@
+---
+
+- name: Install extra packages
+  apt:
+    name: "{{ install_packages }}"
+    state: latest

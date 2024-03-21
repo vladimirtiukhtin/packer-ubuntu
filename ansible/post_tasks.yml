@@ -1,0 +1,15 @@
+---
+
+- name: Lookup for ssh host keys
+  find:
+    path: /etc/ssh
+    pattern: 'ssh_host*key*'
+  register: ssh_host_keys
+
+- name: Wipe ssh host keys
+  file:
+    name: "{{ item.path }}"
+    state: absent
+  loop_control:
+    label: "{{ item.path }}"
+  with_items: "{{ ssh_host_keys.files }}"

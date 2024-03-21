@@ -1,0 +1,47 @@
+---
+
+#
+#
+#
+
+#- name: ansible-os-hardening
+#  src: https://stash.customappsteam.co.uk/scm/anr/ansible-os-hardening
+#  version: master
+#  scm: git
+#
+#- name: centos7-hardening
+#  src: https://stash.customappsteam.co.uk/scm/anr/centos7-hardening
+#  version: master
+#  scm: git
+
+- name: azure-cli
+  src: https://stash.customappsteam.co.uk/scm/anr/azure-cli.git
+  version: 0.0.1
+  scm: git
+
+- name: aws-cli
+  src: https://stash.customappsteam.co.uk/scm/anr/aws-cli.git
+  version: 0.0.2
+  scm: git
+
+#- name: aws-cloudwatch
+#  src: https://stash.customappsteam.co.uk/scm/anr/amazon-cloudwatch-agent.git
+#  version: vtiukhtin
+#  scm: git
+
+- name: aws-inspector
+  src: https://stash.customappsteam.co.uk/scm/anr/aws-inspector.git
+  version: vtiukhtin
+  scm: git
+
+- name: python-pip
+  src: https://stash.customappsteam.co.uk/scm/anr/python-pip.git
+  version: vtiukhtin
+  scm: git
+
+- name: sshd
+  src: https://stash.customappsteam.co.uk/scm/anr/sshd.git
+  version: vtiukhtin
+  scm: git
+
+#- src: geerlingguy.ruby

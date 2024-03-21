@@ -1,0 +1,29 @@
+---
+
+#
+#
+#
+
+- name: Ubuntu 18.04 Hardening
+  hosts: all
+  become: true
+  roles:
+    #- role: geerlingguy.ruby
+    #- role: ansible-os-hardening
+    #- role: centos7-hardening
+    #- role: aws-cloudwatch
+    #  when: cloud == "aws"
+    - role: aws-inspector
+      when: cloud == "aws"
+    - role: azure-cli
+      when: cloud == "azure"
+    - role: aws-cli
+      when: cloud == "aws"
+    - role: sshd
+    - role: python-pip
+  pre_tasks:
+    - include_tasks: pre_tasks.yml
+  tasks:
+    - include_tasks: tasks.yml
+  post_tasks:
+    - include_tasks: post_tasks.yml
